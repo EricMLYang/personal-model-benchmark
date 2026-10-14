@@ -1,0 +1,82 @@
+[
+  {
+    "cell": 2,
+    "tag": "c02",
+    "rule": "R6",
+    "line": 16,
+    "evidence": "pos_api_token = \"pk_live_...\"",
+    "fix": "改用 dbutils.secrets.get(\"pos\", \"api_token\")，並撤換已外洩的 token"
+  },
+  {
+    "cell": 3,
+    "tag": "c03",
+    "rule": "R7",
+    "line": 27,
+    "evidence": "F.col(\"revenue_raw\").cast(\"double\")",
+    "fix": "改為 F.expr(\"try_cast(revenue_raw AS DOUBLE)\")"
+  },
+  {
+    "cell": 4,
+    "tag": "c04",
+    "rule": "R5",
+    "line": 37,
+    "evidence": "for c in FLAG_COLS: df = df.withColumn(...)",
+    "fix": "改用 df.withColumns({c: ... for c in FLAG_COLS}) 一次產生"
+  },
+  {
+    "cell": 5,
+    "tag": null,
+    "rule": "R1",
+    "line": 42,
+    "evidence": "print(f\"bronze rows: ...\")",
+    "fix": "在 cell 第一行加上標籤 # [c05] bronze_check"
+  },
+  {
+    "cell": 7,
+    "tag": "c07",
+    "rule": "R3",
+    "line": 55,
+    "evidence": "spark.table(\"hive_metastore.default.store_master\")",
+    "fix": "改讀 Unity Catalog 表 f\"{cfg.catalog}.{cfg.schema}.s_store_master\""
+  },
+  {
+    "cell": 8,
+    "tag": "c08",
+    "rule": "R10",
+    "line": 62,
+    "evidence": "out.write...saveAsTable(...) 在 build_silver 內",
+    "fix": "移除函式內的寫入，改在 cell 層級對回傳的 DataFrame 寫表"
+  },
+  {
+    "cell": 9,
+    "tag": "c09",
+    "rule": "R8",
+    "line": 72,
+    "evidence": ".merge(silver_df.alias(\"s\"), \"t.order_id = s.order_id\")",
+    "fix": "MERGE 前先 silver_df.dropDuplicates([\"order_id\"]) 或用 window 取最新"
+  },
+  {
+    "cell": 10,
+    "tag": "c10",
+    "rule": "R9",
+    "line": 85,
+    "evidence": "saveAsTable(f\"...s_daily_store_summary\")",
+    "fix": "gold 彙總表改名為 g_daily_store_summary"
+  },
+  {
+    "cell": 12,
+    "tag": "c12",
+    "rule": "R4",
+    "line": 96,
+    "evidence": "spark.table(\"prod_catalog.sales.s_orders\")",
+    "fix": "改為 f\"{cfg.catalog}.{cfg.schema}.s_orders\""
+  },
+  {
+    "cell": 12,
+    "tag": "c12",
+    "rule": "R2",
+    "line": 97,
+    "evidence": "....select(\"order_id\").collect()",
+    "fix": "改用聚合 count() 或先 limit；若只需筆數不要 collect"
+  }
+]

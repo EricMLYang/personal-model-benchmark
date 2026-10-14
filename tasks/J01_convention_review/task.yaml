@@ -1,0 +1,9 @@
+id: J01
+title: 依規範 code review
+category: J
+quick: true
+judge: true
+timeout_min: 20
+protected:
+  - CONVENTIONS.md
+  - jobs/daily_sales/notebook.py

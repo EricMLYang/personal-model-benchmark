@@ -1,0 +1,50 @@
+updated: 2026-10-01
+lines:
+  - {id: insight, name: 洞察平台}
+  - {id: signage, name: 智慧看板}
+  - {id: common, name: 共通能力建設}
+repos:
+  - name: insight_pm
+    line: insight
+    type: pm
+    tier: active
+    note: 洞察平台主 PM
+  - name: event_crawler
+    line: insight
+    type: code
+    tier: active
+    note: 財報行事曆爬蟲
+  - name: quarterly_deck
+    line: insight
+    type: code
+    tier: paused
+    resume_when: 每季法說簡報製作（約每年 1、4、7、10 月）
+    note: 季度簡報產生
+  - name: signage_pm
+    line: signage
+    type: pm
+    tier: active
+    note: 智慧看板主 PM
+  - name: signage_datahub
+    line: signage
+    type: code
+    tier: dormant
+    note: 看板資料平台（停工）
+  - name: legacy_middleware
+    line: signage
+    type: code
+    tier: archived
+    ended: 2026-06
+    reason: 展會 Demo 交付完成
+    note: 舊中介層驗證 CLI
+  - name: agent_factory
+    line: common
+    type: pm
+    tier: active
+    note: LLM agent 實作中心
+  - name: study_group
+    line: common
+    type: pm
+    tier: active
+    tier_override: 讀書會每兩週一次，commit 間隔天生較長
+    note: 雲端考照讀書會

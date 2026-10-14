@@ -1,0 +1,8 @@
+id: C03
+title: 清冊渲染器：新功能＋補測試
+category: C
+quick: true
+judge: false
+timeout_min: 30
+protected:
+  - registry.yaml

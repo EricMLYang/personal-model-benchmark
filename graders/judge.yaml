@@ -1,0 +1,6 @@
+# 第二段 LLM 評審設定（待定）。command 留空 → 只出客觀分，報表標「pending」。
+# 決定後填入例如：
+#   command: [claude, -p, --model, <judge-model>, --output-format, json]
+#   runs: 2            # 每份作答評幾次取平均
+command: null
+runs: 2

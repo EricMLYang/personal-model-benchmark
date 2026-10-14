@@ -1,0 +1,8 @@
+id: X01
+title: 凌亂 Excel 語意抽取
+category: X
+quick: true
+judge: false
+timeout_min: 30
+protected:
+  - 產能月報.xlsx

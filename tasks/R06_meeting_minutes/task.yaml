@@ -1,0 +1,8 @@
+id: R06
+title: 會議逐字稿萃取
+category: R
+quick: true
+judge: true
+timeout_min: 15
+protected:
+  - transcript.md

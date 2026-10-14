@@ -1,0 +1,12 @@
+id: C01
+title: 修 bug：日期／季度／時區
+category: C
+quick: true
+judge: false
+timeout_min: 30
+protected:
+  - tests/test_util.py
+  - tests/test_extract.py
+  - tests/test_scheduler.py
+  - tests/test_store.py
+  - README.md

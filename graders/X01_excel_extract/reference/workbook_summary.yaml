@@ -1,0 +1,68 @@
+workbook: 產能月報.xlsx
+sheets:
+  - name: 產能概況
+    blocks:
+      - range: B4:H8
+        title: 表一 各廠月產能（千片）
+        kind: inferred
+        table_name: null
+        header: [廠區, 1月, 2月, 3月, 4月, 5月, 6月]
+        has_formulas: true
+        notes: [註：C廠 3 月歲修停機一週。]
+      - range: B13:H16
+        title: 表二 稼動率（%）
+        kind: inferred
+        table_name: null
+        header: [廠區, 1月, 2月, 3月, 4月, 5月, 6月]
+        has_formulas: false
+        notes: []
+    charts:
+      - title: 各廠月產能
+        type: bar
+        series:
+          - {name_ref: 產能概況!B5, values_ref: 產能概況!C5:H5, categories_ref: 產能概況!C4:H4}
+          - {name_ref: 產能概況!B6, values_ref: 產能概況!C6:H6, categories_ref: 產能概況!C4:H4}
+          - {name_ref: 產能概況!B7, values_ref: 產能概況!C7:H7, categories_ref: 產能概況!C4:H4}
+        linked_block: B4:H8
+        confidence: high
+      - title: 稼動率趨勢
+        type: line
+        series:
+          - {name_ref: 產能概況!B14, values_ref: 產能概況!C14:H14, categories_ref: 產能概況!C13:H13}
+          - {name_ref: 產能概況!B15, values_ref: 產能概況!C15:H15, categories_ref: 產能概況!C13:H13}
+          - {name_ref: 產能概況!B16, values_ref: 產能概況!C16:H16, categories_ref: 產能概況!C13:H13}
+        linked_block: B13:H16
+        confidence: high
+      - title: A廠產能與稼動率
+        type: line
+        series:
+          - {name_ref: 產能概況!B5, values_ref: 產能概況!C5:H5, categories_ref: 產能概況!C4:H4}
+          - {name_ref: 產能概況!B14, values_ref: 產能概況!C14:H14, categories_ref: 產能概況!C4:H4}
+        linked_block: null
+        confidence: low
+  - name: 出貨明細
+    blocks:
+      - range: A1:E41
+        title: null
+        kind: formal_table
+        table_name: ShipTable
+        header: [日期, 客戶, 產品, 數量, 金額]
+        has_formulas: false
+        notes: []
+      - range: G2:H6
+        title: 客戶別出貨合計
+        kind: inferred
+        table_name: null
+        header: [客戶, 數量]
+        has_formulas: true
+        notes: []
+    charts:
+      - title: 客戶別出貨量
+        type: bar
+        series:
+          - {name_ref: 出貨明細!H2, values_ref: 出貨明細!H3:H6, categories_ref: 出貨明細!G3:G6}
+        linked_block: G2:H6
+        confidence: high
+  - name: 說明
+    blocks: []
+    charts: []

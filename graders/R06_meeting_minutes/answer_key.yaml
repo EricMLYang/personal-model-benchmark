@@ -1,0 +1,23 @@
+# BENCH-GRADER-CANARY-7f3a9c1e
+meeting_date: "2026-10-07"
+attendees: [林語彤, 陳柏睿, 許書涵, 王紹宇, 鄭宜蓁, 吳佩珊, 黃冠霖]
+decisions:            # 必須列出（每項任一組關鍵字全部命中即算）
+  - id: P03下午
+    any_of: [[P03, 下午], [午後甜點, 下午]]
+  - id: 三週自1013
+    any_of: [[三週, "13"], [3 週, "13"], [3週, "13"], [三周, "13"]]
+  - id: 日本延到Q1
+    any_of: [[日本, 第一季], [日本, Q1], [日本, 明年]]
+overturned:           # 被推翻的決定：出現在 decisions 即扣分
+  must_have: [辦公型]
+  any_marker: [只, 僅]
+  unless_any: [四種, 不要, 不只, 撤回, 維持, 全部, 所有]
+actions:
+  - {owner: 王紹宇, due: "2026-10-09", keywords: [重送, POS, 營收空白, 空白]}
+  - {owner: 許書涵, due: "2026-10-12", keywords: [P03, 對齊, 排程]}
+  - {owner: 鄭宜蓁, due: "2026-10-08", keywords: [門市名單, 名單]}
+  - {owner: 陳柏睿, due: "2026-10-14", keywords: [去重, 重複]}
+  - {owner: 吳佩珊, due: "2026-10-16", keywords: [期中報告, 初稿]}
+  - {owner: 黃冠霖, due: "2026-10-21", keywords: [配額, 用量, Databricks]}
+open_question:
+  keywords: [指標定義, 對照表]

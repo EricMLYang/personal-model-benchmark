@@ -1,0 +1,9 @@
+id: X03
+title: CSV 分析問答＋短報告
+category: X
+quick: true
+judge: true
+timeout_min: 30
+protected:
+  - data/*.csv
+  - data/README.md

@@ -1,0 +1,21 @@
+# 無頭模式指令範本。{model} 會被替換成 `bench.py new --model` 的值。
+# prompt_via: stdin（預設，題目說明從標準輸入送入）或 arg（附加為最後一個參數）。
+# 權限：各 agent 都設為「在作答資料夾內可自動編輯與執行指令」，作答資料夾在 repo 之外（~/bench-runs）。
+# 新增 agent：複製一段、改指令即可。
+
+claude-code:
+  command: [claude, -p, --model, "{model}", --output-format, json,
+            --permission-mode, acceptEdits,
+            --allowedTools, "Bash", "Read", "Edit", "Write", "Glob", "Grep"]
+  prompt_via: stdin
+
+codex:
+  command: [codex, exec, -m, "{model}", -s, workspace-write, --skip-git-repo-check, --json, "-"]
+  prompt_via: stdin
+
+gemini:
+  command: [gemini, -m, "{model}", --approval-mode, yolo, -o, json,
+            -p, "請完整閱讀標準輸入中的規則與任務說明，並在目前資料夾完成任務。"]
+  prompt_via: stdin
+
+# agy（Antigravity）目前以互動模式為主：bench.py new --agent agy --model <m> --mode interactive

@@ -1,0 +1,39 @@
+# 虛構世界設定。所有題目的人物、公司、客戶都從這裡取用，與任何真實組織無關。
+company:
+  name: 澄岳科技
+  en: Chengyue Tech
+  team: 應用數據組（ADS）
+  brand: 澄岳智能助理
+
+product_lines:
+  - id: insight
+    name: 洞察平台
+    desc: 給內部業務單位用的市場情報與財報行事曆平台
+  - id: signage
+    name: 智慧看板
+    desc: 連鎖零售門市的數位看板與受眾包推播
+  - id: cockpit
+    name: 車載驗證
+    desc: 車用座艙軟體的雲端虛擬驗證（潛在新產品線）
+
+people:
+  - {name: 林語彤, role: PM 總管, team: ADS}
+  - {name: 陳柏睿, role: 資料工程師, team: ADS}
+  - {name: 許書涵, role: 資料科學家, team: ADS}
+  - {name: 王紹宇, role: 後端工程師, team: ADS}
+  - {name: 趙怡安, role: 業務分析師, team: 業務一處}
+  - {name: 周韋廷, role: 業務經理, team: 業務一處}
+  - {name: 鄭宜蓁, role: 零售專案經理, team: 智慧看板}
+  - {name: 黃冠霖, role: 雲端架構師, team: 資訊處}
+  - {name: 蔡明哲, role: 處長, team: ADS}
+  - {name: 吳佩珊, role: 客戶成功經理, team: 智慧看板}
+
+customers:
+  - {name: 好鄰居超商, line: signage, desc: 全台 1,200 家門市的連鎖超商}
+  - {name: 北辰汽車, line: cockpit, desc: 車用座艙一階供應商}
+
+timeline:
+  - {date: 2026-07-07, event: 洞察平台 2.0 對業務一處開放試用}
+  - {date: 2026-08-18, event: 好鄰居超商受眾包推播首週測試}
+  - {date: 2026-09-15, event: 洞察平台財報行事曆功能上線}
+  - {date: 2026-10-06, event: 集團雲架構檢討會}
